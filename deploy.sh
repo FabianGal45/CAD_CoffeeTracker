@@ -19,4 +19,4 @@ then
 fi
 
 
-sudo docker run -p 3000:3000 -d --name $CONTAINER_NAME $IMAGE_NAME --trace
+sudo docker run -p 3000:3000 -d $IMAGE_NAME
