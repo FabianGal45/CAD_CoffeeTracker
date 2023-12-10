@@ -19,4 +19,4 @@ then
 fi
 
 
-sudo docker run -p 3000:3000 -d $IMAGE_NAME
+sudo docker run -e SECRET_KEY_BASE=$SECRET_KEY_BASE -p 3000:3000 -d $IMAGE_NAME
