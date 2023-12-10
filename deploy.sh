@@ -15,4 +15,6 @@ if [ "$CURRENT_INSTANCE" ]; then
 fi
 
 # Run the new image
-sudo docker run -e SECRET_KEY_BASE=$SECRET_KEY_BASE -p 3000:3000 -d --name $CONTAINER_NAME $IMAGE_NAME
+
+# Run the new image with RAILS_ENV and RAILS_MASTER_KEY
+sudo docker run -e RAILS_ENV=$RAILS_ENV -e RAILS_MASTER_KEY=$RAILS_MASTER_KEY -e SECRET_KEY_BASE=$SECRET_KEY_BASE -p 3000:3000 -d --name $CONTAINER_NAME $IMAGE_NAME
