@@ -18,6 +18,5 @@ then
   sudo docker rm $CONTAINER_NAME
 fi
 
-echo "docker run -p 80:80 -d --name $CONTAINER_NAME $IMAGE_NAME"
 
-sudo docker run -p 80:80 -d --name $CONTAINER_NAME $IMAGE_NAME
+sudo docker run -p 3000:3000 -d --name $CONTAINER_NAME $IMAGE_NAME
