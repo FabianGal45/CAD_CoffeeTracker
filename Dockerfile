@@ -13,6 +13,7 @@ ENV RAILS_ENV="production" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development"
 
+ENV SECRET_KEY_BASE=${SECRET_KEY_BASE}
 
 # Throw-away build stage to reduce size of final image
 FROM base as build
@@ -29,6 +30,8 @@ RUN bundle install && \
 
 # Copy application code
 COPY . .
+
+RUN rake db:migrate
 
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
