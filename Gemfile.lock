@@ -143,6 +143,8 @@ GEM
     nio4r (2.7.0)
     nokogiri (1.15.5-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.15.5-x86_64-linux)
+      racc (~> 1.4)
     psych (5.1.1.1)
       stringio
     public_suffix (5.0.4)
@@ -169,7 +171,7 @@ GEM
       activerecord (= 7.1.2)
       activestorage (= 7.1.2)
       activesupport (= 7.1.2)
-      bundler (>= 1.15.0)
+      bundler (~> 2.4.0)
       railties (= 7.1.2)
     rails-dom-testing (2.2.0)
       activesupport (>= 5.0.0)
@@ -207,6 +209,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.9-x64-mingw-ucrt)
+    sqlite3 (1.6.9-x86_64-linux)
     stimulus-rails (1.3.0)
       railties (>= 6.0.0)
     stringio (3.1.0)
@@ -236,6 +239,7 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
