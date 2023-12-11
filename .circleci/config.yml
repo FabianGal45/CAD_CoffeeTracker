@@ -8,11 +8,6 @@ workflows:
             branches:
               only:
                 - main
-      - test:
-          filters:
-            branches:
-              only:
-                - main
       - deploy:
           filters:
             branches:
