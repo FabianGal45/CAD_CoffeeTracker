@@ -10,7 +10,9 @@ fi
 # Pull down the new image
 sudo docker pull $IMAGE_NAME
 
-sudo bin/rails db:migrate
+# Run migrations inside the container
+sudo docker run --rm -e RAILS_ENV=production -e RAILS_MASTER_KEY=$RAILS_MASTER_KEY -e SECRET_KEY_BASE=$SECRET_KEY_BASE $IMAGE_NAME bin/rails db:migrate
+
 
 # Run the new image
 sudo docker run -e RAILS_ENV=$production  -e RAILS_MASTER_KEY=$RAILS_MASTER_KEY -e SECRET_KEY_BASE=$SECRET_KEY_BASE -p 3000:3000 -d --name $CONTAINER_NAME $IMAGE_NAME bin/rails server -b 0.0.0.0 
