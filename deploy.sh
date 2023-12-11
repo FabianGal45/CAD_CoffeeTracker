@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Stop the existing container, if it exists
+# Stop the existing container, if it exists and delete it too 
 CURRENT_INSTANCE=$(sudo docker ps -q --filter ancestor="$IMAGE_NAME")
 if [ "$CURRENT_INSTANCE" ]; then
   sudo docker stop $CURRENT_INSTANCE
