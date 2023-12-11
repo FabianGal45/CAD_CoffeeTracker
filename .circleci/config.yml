@@ -19,21 +19,13 @@ jobs:
           command: docker build -t $IMAGE_NAME:latest . --build-arg SECRET_KEY_BASE=$SECRET_KEY_BASE
       - run:
           name: publish-docker-image
-          command: docker push $IMAGE_NAME
-      - run:
-          name: run-docker-image
-          command: docker run -p 3000:3000 -d $IMAGE_NAME
-  test:
-    working_directory: ~/CoffeeTracker
-    docker:
-      - image: cimg/ruby:3.2.2
-    steps:
-      - checkout
-      - setup_remote_docker
+          command: docker push $IMAGE_NAM
       - run:
           name: TEST1
           command: docker run rails test 
-
+      - run:
+          name: run-docker-image
+          command: docker run -p 3000:3000 -d $IMAGE_NAME
   deploy:
     docker:
       - image: cimg/ruby:3.2.2
@@ -51,13 +43,10 @@ workflows:
             branches:
               only:
                 - main
-      - test:
-          requires:
-            - build
       - deploy:
           filters:
             branches:
               only:
                 - main
           requires:
-            - test
+            - build
