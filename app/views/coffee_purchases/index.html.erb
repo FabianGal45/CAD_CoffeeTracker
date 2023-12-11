@@ -3,6 +3,11 @@
 <h1>Coffee purchases</h1>
 
 <div id="coffee_purchases">
+  <tr>
+    <th>Date</th>
+    <th>Daily Spending</th>
+  </tr>
+
   <% @coffee_purchases.each do |coffee_purchase| %>
     <%= render coffee_purchase %>
     <p>
@@ -12,3 +17,8 @@
 </div>
 
 <%= link_to "New coffee purchase", new_coffee_purchase_path %>
+
+<div>
+  <p>Weekly Spending: <%= @weekly_spending %></p>
+  <p>Monthly Spending: <%= @monthly_spending %></p>
+</div>
