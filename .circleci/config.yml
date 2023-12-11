@@ -51,7 +51,7 @@ jobs:
       - run:
           name: Run Rails Tests
           command: |
-            docker run -v $(pwd):/app -w /app -e RAILS_ENV=test <YOUR_IMAGE_NAME> bundle exec rails test
+            docker run -v $(pwd):/app -w /app -e RAILS_ENV=test $IMAGE_NAME bundle exec rails test
   deploy:
     docker:
       - image: cimg/ruby:3.2.2
