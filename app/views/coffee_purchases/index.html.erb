@@ -7,7 +7,7 @@
       <p>Weekly Spending: <%= @weekly_spending %></p>
       <p>Monthly Spending: <%= @monthly_spending %></p>
     </div>
-    <div class="row justify-content-md-center">
+    <div class="row justify-content-center">
         <%= link_to "New coffee purchase", new_coffee_purchase_path, class: "btn btn-primary col-3", role: "button" %>
     </div>
     <div class="row">
@@ -22,7 +22,7 @@
           <div class="card-body">
             <%= render coffee_purchase %>
 
-            <a class="card-link"> <%= link_to "Show this coffee purchase", coffee_purchase %> </a>
+            <a class="card-link"> <%= link_to "Show this coffee purchase", coffee_purchase, class:"btn btn-outline-primary" %> </a>
           </div>
         </div>
       </div>
