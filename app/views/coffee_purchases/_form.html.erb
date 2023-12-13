@@ -1,6 +1,6 @@
 <div class="container text-center">
-  <%= form_with(model: coffee_purchase) do |form| %>
-    <% if coffee_purchase.errors.any? %>
+  <%= form_with(model: coffee_purchase) do |form| %> <%-# This begins the form model for the cofee purchase%>
+    <% if coffee_purchase.errors.any? %>  <%-# This is where it will be checked for any errors if there are it will display an error with the message below%>
       <div style="color: red">
         <h2><%= pluralize(coffee_purchase.errors.count, "error") %> prohibited this coffee_purchase from being saved:</h2>
 
@@ -15,17 +15,17 @@
     
     <div class="row justify-content-md-center">
       <div class="mb-3" style="width: 18rem;">
-        <%= form.label :price, class:"form-label" %>
-        <%= form.text_field :price, class:"form-control"%>
+        <%= form.label :price, class:"form-label" %>  <%-# this is the label for the price %>
+        <%= form.text_field :price, class:"form-control"%>  <%-# This is the input box for the price%>
       </div>
 
       <div class="mb-3" style="width: 18rem;">
-        <%= form.label :purchased_at, class:"form-label" %>
-        <%= form.datetime_field :purchased_at, class:"form-control" %>
+        <%= form.label :purchased_at, class:"form-label" %>  <%-# this is the label for the purchased at variable which will store the time of purchase%>
+        <%= form.datetime_field :purchased_at, class:"form-control" %>  <%-# This is the input box where the user can input the time of purchase%>
       </div>
 
       <div class="mb-3">
-        <%= form.submit 'Submit', class:"btn btn-primary" %>
+        <%= form.submit 'Submit', class:"btn btn-primary" %>  <%-# this represents the submit button which will save the data and redirect the user to the purchase that they just have submitted %>
       </div>
     </div>
 

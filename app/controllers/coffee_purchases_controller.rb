@@ -4,9 +4,8 @@ class CoffeePurchasesController < ApplicationController
   # GET /coffee_purchases or /coffee_purchases.json
   def index
     @coffee_purchases = CoffeePurchase.all
-    @daily_spending = CoffeePurchase.daily_spending
-    @weekly_spending = CoffeePurchase.weekly_spending
-    @monthly_spending = CoffeePurchase.monthly_spending
+    @weekly_spending = CoffeePurchase.weekly_spending # variable that stores the weekly spending to be used in the index.html.erb
+    @monthly_spending = CoffeePurchase.monthly_spending # variable that stores the monthly spending to be used in the index.html.erb
   end
 
   # GET /coffee_purchases/1 or /coffee_purchases/1.json

@@ -1,11 +1,11 @@
 <div class="container text-center">
   <h1>New coffee purchase</h1>
 
-  <%= render "form", coffee_purchase: @coffee_purchase %>
+  <%= render "form", coffee_purchase: @coffee_purchase %> <%-# This is the part that is rendering the new entry form for coffee purchases to add new purchase%>
 
   <br>
 
   <div class="btn-group">
-    <%= link_to "Back to coffee purchases", coffee_purchases_path, class:"btn btn-outline-primary" %>
+    <%= link_to "Back to coffee purchases", coffee_purchases_path, class:"btn btn-outline-primary" %> <%-# Button that redirects back to the main page with all the coffee purchases%>
   </div>
 </div>

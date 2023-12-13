@@ -4,25 +4,25 @@
       <h1>Coffee purchases</h1>
     </div>
     <div class="row">
-      <p>Weekly Spending: <%= @weekly_spending %></p>
-      <p>Monthly Spending: <%= @monthly_spending %></p>
+      <p>Weekly Spending: <%= @weekly_spending %></p> <%-# this variable displays the weekly spending%>
+      <p>Monthly Spending: <%= @monthly_spending %></p> <%-# This variable displays the monthly spending%>
     </div>
     <div class="row justify-content-center">
-        <%= link_to "New coffee purchase", new_coffee_purchase_path, class: "btn btn-primary col-3", role: "button" %>
+        <%= link_to "New coffee purchase", new_coffee_purchase_path, class: "btn btn-primary col-3", role: "button" %>  <%-# This link_to has been styled to look like a button with bootstrap and will redirect to the new cofee purchase page%>
     </div>
     <div class="row">
-        <p style="color: green"><%= notice %></p>
+        <p style="color: green"><%= notice %></p>  <%-# This is the notice line, this line will show every time a change has been made like deleting a card.%>
     </div>
   </div>
 
   <div class="row justify-content-center row-cols-lg-4 row-cols-md-2 row-cols-sm-1 g-2" id="coffee_purchases">
-    <% @coffee_purchases.each do |coffee_purchase| %>
+    <% @coffee_purchases.each do |coffee_purchase| %>  <%-# This is a loop that will go through each cofee purchase, display it's contents and place it in a bootstrap card%>
       <div class="col">
         <div class="card text-center">
           <div class="card-body">
-            <%= render coffee_purchase %>
+            <%= render coffee_purchase %> <%-# This is the part that will render the contents of the purchase%>
 
-            <a class="card-link"> <%= link_to "Show this coffee purchase", coffee_purchase, class:"btn btn-outline-primary" %> </a>
+            <a class="card-link"> <%= link_to "Show this coffee purchase", coffee_purchase, class:"btn btn-outline-primary" %> </a>  <%-# And this is a link that will allow the user to view the coffee purchase which can then be updated or deleted%>
           </div>
         </div>
       </div>
