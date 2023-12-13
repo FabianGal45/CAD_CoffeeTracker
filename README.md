@@ -6,7 +6,7 @@ The necessity for this application emerged during my regular commute to and from
 
 
 This application makes use of Continous integration and development by using:
-* Unit tests, Integration tests and System tests - All can be run locally
+* Unit tests, Integration tests and System tests - All can be run locally with the command "rails test" or "rails test:system"
 * Docker for easy transfer of the development environment
 * CircleCI - For running tests on the docker container and deploying if everything is successful.
 * AWS EC2 instance - A ununtu instance that allows me to host the application
