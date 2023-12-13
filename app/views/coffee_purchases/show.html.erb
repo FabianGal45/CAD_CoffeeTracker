@@ -1,17 +1,23 @@
-<div class="container text-center"> <%-# This is the view coffee purchase where a user can add, delete or go back to the main view%>
+<%-# This is the view coffee purchase where a user can add, delete or go back to the main view%>
+<div class="container text-center"> 
   <div class="row justify-content-md-center">
 
     <div class="card text-center mt-4 " style="width: 18rem;">
-      <%= render @coffee_purchase %> <%-# This renders the coffee purchase the user is trying to edit%>
+      <%-# This renders the coffee purchase the user is trying to edit%>
+      <%= render @coffee_purchase %> 
     </div>
 
-    <p style="color: green"><%= notice %></p> <%-# This is the update status after editing a card %>
+    <%-# This is the update status after editing a card %>
+    <p style="color: green"><%= notice %></p> 
 
   </div>
 
   <div class="btn-group" role="group">
-    <%= button_to "Delete", @coffee_purchase, method: :delete, class:"btn btn-danger", type:"button"%> <%-# Button to delete the coffee purchase%>
-    <%= link_to "Edit", edit_coffee_purchase_path(@coffee_purchase), class:"btn btn-warning",  type:"button"%><%-# Button to edit the coffee%>
-    <%= link_to "Back", coffee_purchases_path, class:"btn btn-success",  type:"button" %><%-# Button to go back to all coffee purchases%>
+    <%-# Button to delete the coffee purchase%>
+    <%= button_to "Delete", @coffee_purchase, method: :delete, class:"btn btn-danger", type:"button"%> 
+    <%-# Button to edit the coffee%>
+    <%= link_to "Edit", edit_coffee_purchase_path(@coffee_purchase), class:"btn btn-warning",  type:"button"%>
+    <%-# Button to go back to all coffee purchases%>
+    <%= link_to "Back", coffee_purchases_path, class:"btn btn-success",  type:"button" %>
   </div>
 </div>
