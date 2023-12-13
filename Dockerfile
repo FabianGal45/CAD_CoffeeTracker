@@ -59,7 +59,7 @@ USER rails:rails
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
-RUN bundle exec rake db:migrate
+# RUN bundle exec rake db:migrate
 RUN rails test
 
 # Start the server by default, this can be overwritten at runtime
