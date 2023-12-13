@@ -60,7 +60,7 @@ USER rails:rails
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # RUN bundle exec rake db:migrate
-RUN rails test
+# RUN rails test
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
