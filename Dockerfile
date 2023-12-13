@@ -16,13 +16,9 @@ ENV RAILS_ENV="production" \
 # Throw-away build stage to reduce size of final image
 FROM base as build
 
-# Install packages needed to build gems
+# Install packages needed to build gems & Node.js and Yarn
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libvips pkg-config
-
-# Install Node.js and Yarn
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y nodejs npm && \
+    apt-get install --no-install-recommends -y build-essential git libvips pkg-config nodejs npm && \
     npm install -g yarn && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
@@ -34,9 +30,6 @@ RUN bundle install && \
 
 # Copy application code
 COPY . .
-
-RUN rails db:migrate
-RUN rails test
 
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
@@ -65,6 +58,10 @@ USER rails:rails
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
+
+RUN bundle exec rake db:migrate
+RUN rails test
+
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
