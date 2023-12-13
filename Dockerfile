@@ -38,7 +38,7 @@ RUN bundle exec bootsnap precompile app/ lib/
 ENV RAILS_MASTER_KEY=$RAILS_MASTER_KEY
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
-RUN bundle exec rake db:migrate
+# RUN bundle exec rake db:migrate
 RUN rails test
 
 # Final stage for app image
