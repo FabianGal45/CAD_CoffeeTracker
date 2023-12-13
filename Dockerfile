@@ -35,7 +35,7 @@ RUN bundle install && \
 # Copy application code
 COPY . .
 
-RUN rake db:migrate
+RUN rails db:migrate
 RUN rails test
 
 # Precompile bootsnap code for faster boot times
